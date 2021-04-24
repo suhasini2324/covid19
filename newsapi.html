@@ -1,0 +1,27 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <div style="margin: 40px 40px; width: 450px;">
+
+        <button onclick="makeGETRequest()">Make the News API call</button>
+
+        <p>see console the for results</p>
+    </div>
+    <script>
+        function makeGETRequest() {
+            const url = "https://newsapi.org/v2/top-headlines?q=covid-19&country=in&apiKey=5a93ec5a3e204de99726329a27567575"      
+			const options = {
+                method: 'GET',
+            }
+
+            fetch(url, options)
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(e => console.error(e))
+        }
+    </script>
+	</body>
+	</html>
